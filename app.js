@@ -1,4 +1,3 @@
-// Базовый класс кнопки
 class ActionButton {
     constructor(element) {
         this.element = element;
@@ -17,13 +16,9 @@ class ActionButton {
     }
 
     execute() {
-        // Заглушка (будет переопределяться)
         alert(`Функционал "${this.action}" пока не реализован`);
     }
 }
-
-
-// Наследники под будущую логику
 
 class ApiTestButton extends ActionButton {
     execute() {
@@ -55,49 +50,27 @@ class DevTaskButton extends ActionButton {
     }
 }
 
-
-// Фабрика (ключ к нормальному ООП)
-
 class ButtonFactory {
     static create(element) {
         const action = element.dataset.action;
 
         switch (action) {
-            case 'api':
-                return new ApiTestButton(element);
-            case 'docs':
-                return new DocsButton(element);
-            case 'product':
-                return new ProductRequestButton(element);
-            case 'bug':
-                return new BugReportButton(element);
-            case 'task':
-                return new DevTaskButton(element);
-            default:
-                return new ActionButton(element);
+            case 'api': return new ApiTestButton(element);
+            case 'docs': return new DocsButton(element);
+            case 'product': return new ProductRequestButton(element);
+            case 'bug': return new BugReportButton(element);
+            case 'task': return new DevTaskButton(element);
+            default: return new ActionButton(element);
         }
     }
 }
 
-
-// Инициализация приложения
-
 class App {
-    constructor() {
-        this.buttons = [];
-    }
-
     init() {
-        const elements = document.querySelectorAll('.card');
-
-        elements.forEach(el => {
-            const button = ButtonFactory.create(el);
-            this.buttons.push(button);
+        document.querySelectorAll('.btn').forEach(el => {
+            ButtonFactory.create(el);
         });
     }
 }
 
-
-// Запуск
-const app = new App();
-app.init();
+new App().init();
