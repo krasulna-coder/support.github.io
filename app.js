@@ -6,29 +6,44 @@ class Button {
   }
 
   init() {
-    this.el.addEventListener("click", () => this.handleClick());
+    this.el.addEventListener("click", () => this.handle());
   }
 
-  handleClick() {
-    console.log("Clicked:", this.action);
-    this.execute();
+  handle() {
+    switch (this.action) {
+      case "api":
+        window.open("https://hoppscotch.io/", "_blank");
+        break;
+
+      case "docs":
+        this.toggleModal("docsModal");
+        break;
+
+      case "bug":
+        this.toggleModal("bugModal");
+        break;
+
+      default:
+        alert("Пока не реализовано");
+    }
   }
 
-  execute() {
-    alert(`"${this.action}" пока не реализовано`);
-  }
-}
+  toggleModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.toggle("show");
 
-class ButtonFactory {
-  static create(el) {
-    return new Button(el);
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+      }
+    };
   }
 }
 
 class App {
   init() {
-    document.querySelectorAll("button").forEach(btn => {
-      ButtonFactory.create(btn);
+    document.querySelectorAll("button[data-action]").forEach(btn => {
+      new Button(btn);
     });
   }
 }
