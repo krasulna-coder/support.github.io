@@ -83,3 +83,11 @@ body {
 .right img {
     width: 260px;
 }
+
+
+.btn.secondary {
+    background: #dcdcdc;
+    color: #3b82f6;
+    width: 100%;          /* <-- добавляем */
+    padding: 12px;
+}

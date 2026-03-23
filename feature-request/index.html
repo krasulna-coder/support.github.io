@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запрос на доработку</title>
+
+  <link rel="stylesheet" href="feature.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="../index.html" class="back-btn">← На главную</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h1 class="sectionHeading">Запрос на доработку</h1>
+
+    <form id="featureForm">
+
+      <div class="field">
+        <label>
+          Какую проблему клиента нужно решить
+          <span class="tooltip" data-text="Зачем клиенту нужна эта доработка?">?</span>
+        </label>
+        <textarea id="problem"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Какие цели клиент хочет достичь? Как решается задача сейчас (пошагово)
+          <span class="tooltip" data-text="Опиши цели бизнеса клиента, которые он хочет решить этой фичей.">?</span>
+        </label>
+        <textarea id="goals"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Какие проблемы есть в текущем подходе
+        </label>
+        <textarea id="currentIssues"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Как это повлияет на бизнес (доход, конверсия, скорость работы, удержание клиентов и т.п.)
+        </label>
+        <textarea id="businessImpact"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Описание доработки (1 строка)
+        </label>
+        <input type="text" id="featureDescription">
+      </div>
+
+      <div class="field">
+        <label>
+          Ссылка на аккаунт клиента (если есть)
+        </label>
+        <input type="text" id="clientLink">
+      </div>
+
+      <div class="field">
+        <label>
+          В какой инструмент доработка
+        </label>
+        <select id="tool">
+          <option value="">Выберите инструмент</option>
+          <option value="analytics">Аналитика</option>
+          <option value="events">События. Коллтрекинг</option>
+          <option value="emailTracking">Емейлтрекинг</option>
+          <option value="vats">ВАТС</option>
+          <option value="leadCatcher">Ловец Лидов</option>
+          <option value="mediaPlanPro">Медиаплан ПРО</option>
+          <option value="speechAnalytics">Речевая аналитика</option>
+          <option value="onlineChat">Онлайн-чат и мессенджеры</option>
+          <option value="optimizer">Оптимизатор</option>
+          <option value="smsTargeting">SMS таргетинг</option>
+          <option value="marketingAutomation">Автоматизация маркетинга</option>
+          <option value="integrations">Интеграции</option>
+          <option value="other">Другое</option>
+        </select>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" type="button" id="generateBtn">Создать запрос</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="sectionHeading">Готовый запрос</h2>
+    <pre id="output"></pre>
+
+    <div class="actions">
+      <button class="btn-primary" id="copyBtn">Скопировать</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="feature.js"></script>
+</body>
+</html>

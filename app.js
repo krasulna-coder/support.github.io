@@ -31,6 +31,14 @@ class Button {
         window.location.href = "product/product.html";
         break;
 
+      case "logger":
+        window.open("https://cloud.roistat.com/admin/logger", "_blank");
+        break;
+
+      case "feature":
+        window.location.href = "feature-request/index.html";
+        break;
+
       default:
         alert("Пока не реализовано");
     }
