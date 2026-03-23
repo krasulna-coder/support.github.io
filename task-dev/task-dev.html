@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таск в разработку</title>
+
+  <link rel="stylesheet" href="task-dev.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="../index.html" class="back-btn">← На главную</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h1 class="sectionHeading">Таск в разработку</h1>
+
+    <form id="taskForm">
+
+      <div class="field">
+        <label>Заголовок
+          <span class="tooltip" data-text="Краткое описание задачи">?</span>
+        </label>
+        <input id="title">
+      </div>
+
+      <div class="field">
+        <label>PR
+          <span class="tooltip" data-text="Ссылка на проект">?</span>
+        </label>
+        <input id="pr">
+      </div>
+
+      <div class="field">
+        <label>ST
+          <span class="tooltip" data-text="Ссылка на Support Tools проекта">?</span>
+        </label>
+        <input id="st">
+      </div>
+
+      <div class="field">
+        <label>Задача
+          <span class="tooltip" data-text="Опиши задачу, которую нужно выполнить">?</span>
+        </label>
+        <textarea id="task"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Анализ
+          <span class="tooltip" data-text="Опиши, для чего нужно выполнить эту задачу, и почему стандартными средствами нельзя">?</span>
+        </label>
+        <textarea id="analysis"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn-primary" id="generateBtn">
+          Сгенерировать сообщение
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="sectionHeading">Готовое сообщение</h2>
+    <pre id="output"></pre>
+
+    <div class="actions">
+      <button class="btn-primary" id="copyBtn">Скопировать</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="task-dev.js"></script>
+</body>
+</html>

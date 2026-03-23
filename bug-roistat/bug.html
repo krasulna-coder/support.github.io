@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Баг в Roistat</title>
+
+  <link rel="stylesheet" href="bug.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="../index.html" class="back-btn">← На главную</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h1 class="sectionHeading">Баг в Roistat</h1>
+
+    <form id="bugForm">
+
+      <!-- Заголовок -->
+      <div class="field">
+        <label>Заголовок
+          <span class="tooltip" data-text="Где? Что? Когда? Например: Не создаётся сделка при звонке">?</span>
+        </label>
+        <input id="title">
+      </div>
+
+      <!-- PR -->
+      <div class="field">
+        <label>PR
+          <span class="tooltip" data-text="Ссылка на проект">?</span>
+        </label>
+        <input id="pr">
+      </div>
+
+      <!-- ST -->
+      <div class="field">
+        <label>ST
+          <span class="tooltip" data-text="Ссылка на Support Tools">?</span>
+        </label>
+        <input id="st">
+      </div>
+
+      <!-- Проблема -->
+      <div class="field">
+        <label>Проблема
+          <span class="tooltip" data-text="Короткое описание проблемы">?</span>
+        </label>
+        <textarea id="problem"></textarea>
+      </div>
+
+      <!-- Анализ -->
+      <div class="field">
+        <label>Анализ
+          <span class="tooltip" data-text="Любая полезная информация">?</span>
+        </label>
+        <textarea id="analysis"></textarea>
+      </div>
+
+      <!-- Шаги -->
+      <div class="field">
+        <label>Воспроизведение
+          <span class="tooltip" data-text="Как повторить проблему">?</span>
+        </label>
+        <textarea id="steps"></textarea>
+      </div>
+
+      <!-- Результат -->
+      <div class="field">
+        <label>Результат
+          <span class="tooltip" data-text="Что происходит сейчас">?</span>
+        </label>
+        <textarea id="result"></textarea>
+      </div>
+
+      <!-- Ожидаемый -->
+      <div class="field">
+        <label>Ожидаемый результат
+          <span class="tooltip" data-text="Как должно быть">?</span>
+        </label>
+        <textarea id="expected"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn-primary" id="generateBtn">
+          Сгенерировать сообщение
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="sectionHeading">Готовое сообщение</h2>
+    <pre id="output"></pre>
+
+    <div class="actions">
+      <button class="btn-primary" id="copyBtn">Скопировать</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="bug.js"></script>
+</body>
+</html>

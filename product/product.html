@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запрос в продукт</title>
+
+  <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="../index.html" class="back-btn">← На главную</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h1 class="sectionHeading">Запрос в продукт</h1>
+
+    <form id="productForm">
+
+      <div class="field">
+        <label>
+          Инструмент Ройстат
+          <span class="tooltip" data-text="Например, Коллтрекинг">?</span>
+        </label>
+        <input id="tool" required>
+      </div>
+
+      <div class="field">
+        <label>
+          Ссылки help
+          <span class="tooltip" data-text="Добавь ссылки на хелп, где искали ответ">?</span>
+        </label>
+        <textarea id="help"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Задача
+          <span class="tooltip" data-text="Какую задачу ты или клиент не можете решить">?</span>
+        </label>
+        <textarea id="task"></textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          Вопрос
+          <span class="tooltip" data-text="Начинай с: Как / Какие / Может ли Roistat">?</span>
+        </label>
+        <textarea id="question"></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn-primary" type="button" id="generateBtn">
+          Сгенерировать сообщение
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="sectionHeading">Готовое сообщение</h2>
+    <pre id="output"></pre>
+
+    <div class="actions">
+      <button class="btn-primary" id="copyBtn">Скопировать</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="product.js"></script>
+</body>
+</html>

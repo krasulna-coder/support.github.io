@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Баг в ERP</title>
+
+  <link rel="stylesheet" href="bug-erp.css">
+</head>
+
+<body>
+
+<div class="topbar">
+  <a href="../index.html" class="back-btn">← На главную</a>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h1 class="sectionHeading">Баг в ERP</h1>
+
+    <form id="erpForm">
+
+      <div class="field">
+        <label>Проблема
+          <span class="tooltip" data-text="Кратко опиши что случилось">?</span>
+        </label>
+        <input id="problem">
+      </div>
+
+      <div class="field">
+        <label>Где возникла проблема
+          <span class="tooltip" data-text="Укажи раздел и ссылку">?</span>
+        </label>
+        <textarea id="where"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Шаги к воспроизведению
+          <span class="tooltip" data-text="Опиши последовательность действий">?</span>
+        </label>
+        <textarea id="steps"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Ожидаемый результат
+          <span class="tooltip" data-text="Как должно работать">?</span>
+        </label>
+        <textarea id="expected"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Подтверждение проблемы
+          <span class="tooltip" data-text="Опиши скриншот текстом">?</span>
+        </label>
+        <textarea id="proof"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn-primary" id="generateBtn">
+          Сгенерировать сообщение
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 class="sectionHeading">Готовое сообщение</h2>
+    <pre id="output"></pre>
+
+    <div class="actions">
+      <button class="btn-primary" id="copyBtn">Скопировать</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="bug-erp.js"></script>
+</body>
+</html>
